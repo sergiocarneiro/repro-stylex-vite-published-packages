@@ -1,6 +1,6 @@
 # StyleX Vite Published Packages Issue Reproduction
 
-This is a minimal reproduction project to demonstrate the issue with StyleX and Vite not compiling definitions in published packages.
+A minimal reproduction project to demonstrate the issue with StyleX and Vite not compiling definitions in published packages.
 
 When running the app, only a blank page is displayed, and the console shows the error:
 
@@ -21,10 +21,15 @@ Removing the use of StyleX definitions from the library, leaving only the local 
 
 ## Project Structure
 
-This project consists of two *isolated* packages:
+This project consists of *fully isolated* packages, that consume `library` via the `file:` protocol for simulating the package being published:
 
-- [`app/`](./app/) - A minimal React + Vite application that consumes the library
+- [`app/`](./app/) - A minimal React + Vite application
 - [`library/`](./library/) - A minimal library that exports StyleX definitions
+
+### Additional Experiments
+
+- [`react-router-app/`](./react-router-app/) - A minimal React Router + Vite application — _this one works correctly_
+- [`react-router-cloudflare-app/`](./react-router-cloudflare-app/) - A minimal React Router + Vite + Cloudflare Workers application — _fails with the same error_
 
 ## Key Files
 
