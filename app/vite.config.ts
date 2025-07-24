@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import type { BabelOptions } from "@vitejs/plugin-react";
 import autoprefixer from "autoprefixer";
+import babel from "vite-plugin-babel";
 // @ts-expect-error – untyped module
 import stylex from "@stylexjs/postcss-plugin";
 
@@ -32,7 +33,12 @@ const babelConfig: BabelOptions = {
 
 export default defineConfig({
   plugins: [
-    react({ babel: babelConfig }),
+    react(),
+    babel({
+      babelConfig,
+      loader: "jsx",
+      filter: /\.[jt]sx?$/u,
+    }),
   ],
   css: {
     postcss: {
