@@ -51,10 +51,6 @@ export default defineConfig({
       ],
     },
   },
-  // Prevent dependencies that contain StyleX styles from being pre-bundled
-  optimizeDeps: {
-    exclude: depsWithStyles,
-  },
   ssr: {
     noExternal: depsWithStyles,
   },
