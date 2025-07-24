@@ -28,6 +28,16 @@ const babelConfig: BabelOptions = {
         },
       },
     ],
+    {
+      name: "file-logger",
+      visitor: {
+        Program(_programPath: any, state: any)
+        {
+          const relativePath = state.filename.replace(process.cwd(), "");
+          console.log(`- ${relativePath}`);
+        }
+      }
+    },
   ],
 };
 
