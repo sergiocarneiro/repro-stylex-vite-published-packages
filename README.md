@@ -28,8 +28,10 @@ This project consists of *fully isolated* packages, that consume `library` via t
 
 ### Additional Experiments
 
-- [`react-router-app/`](./react-router-app/) - A minimal React Router + Vite application — _this one works correctly_
-- [`react-router-cloudflare-app/`](./react-router-cloudflare-app/) - A minimal React Router + Vite + Cloudflare Workers application — _fails with the same error_
+Additional app setups that have been tested to ensure the issue is not specific to a particular setup:
+
+- [`react-router-app/`](./react-router-app/) - A minimal React Router + Vite application
+- [`react-router-cloudflare-app/`](./react-router-cloudflare-app/) - A minimal React Router + Vite + Cloudflare Workers application
 
 ## Key Files
 
