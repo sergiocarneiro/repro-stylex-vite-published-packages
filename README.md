@@ -1,5 +1,11 @@
 # StyleX Vite Published Packages Issue Reproduction
 
+> [!TIP]
+> **Status**
+> - [x] React — **working**
+> - [x] React Router — **working**
+> - [ ] React Router + Cloudflare — **failing**, see issue https://github.com/cloudflare/workers-sdk/issues/9036
+
 A minimal reproduction project to demonstrate the issue with StyleX and Vite not compiling definitions in published packages.
 
 When running the app, only a blank page is displayed, and the console shows the error:
