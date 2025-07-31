@@ -16,7 +16,6 @@ const babelConfig = {
   configFile: false,
   presets: ["@babel/preset-typescript"],
   plugins: [
-    // ["@babel/plugin-syntax-typescript", { isTSX: true }],
     [
       "@stylexjs/babel-plugin",
       {
@@ -52,7 +51,6 @@ export default defineConfig({
           useCSSLayers: true,
           include: [
             "./app/**/*.{js,jsx,ts,tsx}",
-            "./workers/**/*.{js,jsx,ts,tsx}",
             ...depsWithStyles.map(
               (dep) => `./node_modules/${dep}/build/**/*.{js,jsx,ts,tsx}`
             ),
@@ -62,8 +60,5 @@ export default defineConfig({
       ],
     },
   },
-  ssr: {
-    // noExternal: depsWithStyles,
-    noExternal: true, // Cloudflare plugin forces this to be `true`
-  },
+  // Cloudflare plugin already forces everything to be bundled using `ssr.noExternal: true`
 });
